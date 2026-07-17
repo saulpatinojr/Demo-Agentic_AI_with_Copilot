@@ -23,7 +23,7 @@ Prove that a single, well-structured set of agent definitions can:
 | architecture-reviewer | **Compass** | Read-only design/reuse review (2-pass cycle) |
 | plan-mode-reviewer | **Sentinel** | Read-only plan review & constraint gate |
 
-**Skills:** `handoff-contracts` (the glue), `terraform-validation`, `github-actions-security`, `azure-verified-modules`, `adr-authoring`, plus the Azure ops pack: `azure-cloud-migrate`, `azure-compliance`, `azure-cost`, `azure-deploy`, `azure-resource-visualizer`, `report-issue` for filing bugs against this demo, and `drawio-skill` for professional draw.io architecture diagrams with the official Azure/AWS icon sets.
+**Skills:** `handoff-contracts` (the glue), `drawio-skill` (the official diagrams skill — draw.io with the official Azure/AWS icon sets and enforced presentation standards), `terraform-validation`, `github-actions-security`, `azure-verified-modules`, `adr-authoring`, the Azure ops pack (`azure-cloud-migrate`, `azure-compliance`, `azure-cost`, `azure-deploy`), and `report-issue` for filing bugs against this demo.
 
 ## Repository layout
 
@@ -50,7 +50,7 @@ Full documentation lives in the **[GitHub Wiki](https://github.com/saulpatinojr/
 
 ## Quick start (60 seconds)
 
-Clone the repo, then copy the bundle **contents** (not the folder itself) into your test project:
+Create a **new, blank folder** for your test project (do not reuse an existing folder, and do not open the cloned repo itself as the project). Clone the repo, then copy the bundle **contents** (not the folder itself) into it:
 
 **Windows (PowerShell):**
 ```powershell
@@ -73,3 +73,5 @@ Then:
 2. Paste an L1 prompt from the [wiki](https://github.com/saulpatinojr/Demo-Agentic_AI_with_Copilot/wiki/03-Test-Prompts-L1), e.g. *"Design a small Azure landing zone for a dev web app"* — and watch it route to Arc.
 
 > Heads-up: `.claude`/`.github` are dot-folders — if you drag-and-drop in Explorer/Finder instead of using the commands above, make sure hidden files are visible so they actually get copied.
+>
+> **Verify the nesting:** the dot-folder must sit at the project's TOP level (`your-project/.claude/` or `your-project/.github/`). If you see `your-project/claude/` or `your-project/copilot/`, you copied the folder instead of its contents and nothing will register — move the contents up one level.
