@@ -25,6 +25,53 @@ Prove that a single, well-structured set of agent definitions can:
 
 **Skills:** `handoff-contracts` (the glue), `drawio-skill` (the official diagrams skill — draw.io with the official Azure/AWS icon sets and enforced presentation standards), `terraform-validation`, `github-actions-security`, `azure-verified-modules`, `adr-authoring`, the Azure ops pack (`azure-cloud-migrate`, `azure-compliance`, `azure-cost`, `azure-deploy`), and `report-issue` for filing bugs against this demo.
 
+## Release 0.5
+
+This release simplifies the test prompts into smaller, story-driven scenarios so they can be run one by one without carrying too much context.
+
+- L1 prompts are now intentionally small and focused on a single agent or skill.
+- L2 prompts keep the handoff flow but reduce the amount of infrastructure at each step.
+- L3 prompts still exercise the full ecosystem, but each scenario is easier to follow and explain.
+- The wiki content now has a local markdown source mirror in `wiki/` so the prompt set is easier to maintain.
+
+## Cheat sheet
+
+### Which agent to use
+
+| If the request is about... | Use this agent | What it does |
+|---|---|---|
+| Azure architecture or landing zones | azure-architect / Arc | Designs Azure or hybrid topology and produces REQ/TOPOLOGY/CONSTRAINTS/ADR handoffs |
+| AWS architecture or landing zones | aws-architect / Outpost | Designs AWS or hybrid topology and produces the same handoffs for AWS |
+| Terraform code or modules | terraform-engineer / Atlas | Writes, refactors, validates, and operationalizes Terraform |
+| GitHub Actions or repo governance | github-expert / Actions | Builds secure workflows, OIDC, branch protection, and repo automation |
+| Application code or feature work | software-engineer / Forge | Implements the app feature end-to-end |
+| Design or reuse review after implementation | architecture-reviewer / Compass | Read-only review focused on architecture, reuse, and complexity |
+| Terraform plan safety review | plan-mode-reviewer / Sentinel | Read-only plan gate before apply |
+
+### Which skill to load
+
+| If you need... | Load this skill | What it is for |
+|---|---|---|
+| Agent-to-agent payload checks | handoff-contracts | Validates REQ, TOPOLOGY, CONSTRAINTS, and review handoffs |
+| Terraform safety checks | terraform-validation | Runs fmt, validate, tests, linting, and security scans |
+| Workflow security review | github-actions-security | Hardens workflow YAML and OIDC usage |
+| Azure module compliance | azure-verified-modules | Checks Azure Terraform modules against AVM rules |
+| Decision records | adr-authoring | Writes ADRs for non-obvious design choices |
+| Azure migration | azure-cloud-migrate | Assesses and migrates workloads to Azure |
+| Azure compliance audits | azure-compliance | Runs azqr and Key Vault expiration checks |
+| Azure cost analysis | azure-cost | Queries, forecasts, and optimizes spend |
+| Prepared Azure deployment | azure-deploy | Executes an already-validated Azure deployment |
+| Azure resource diagrams | azure-resource-visualizer | Builds Mermaid diagrams from live Azure resources |
+| Polished architecture diagrams | drawio-skill | Creates draw.io diagrams with official vendor icons |
+| Filing a repo bug | report-issue | Creates an issue for this demo after preview and approval |
+
+### Fast routing rules
+
+1. Design before code: architecture requests go to Arc or Outpost first.
+2. Code before review: Forge or Atlas finish work, then reviewers gate it.
+3. Handoff with contracts: never pass free-form design between agents when a typed payload is required.
+4. Use the review skills before apply or merge: Sentinel for Terraform plans, Compass for implementation review.
+
 ## Repository layout
 
 ```
