@@ -33,24 +33,43 @@ Prove that a single, well-structured set of agent definitions can:
 │   └── .claude/
 │       ├── agents/             ← 7 agents
 │       └── skills/             ← 11 skills
-├── copilot/                    ← drag the CONTENTS into your project root for GitHub Copilot
-│   └── .github/
-│       ├── copilot-instructions.md   ← orchestrator (auto-loaded by Copilot)
-│       ├── agents/             ← 7 agents (.agent.md)
-│       └── skills/             ← 11 skills
-└── wiki/                       ← full setup guide + L1/L2/L3 test prompts & expected outcomes
+└── copilot/                    ← drag the CONTENTS into your project root for GitHub Copilot
+    └── .github/
+        ├── copilot-instructions.md   ← orchestrator (auto-loaded by Copilot)
+        ├── agents/             ← 7 agents (.agent.md)
+        └── skills/             ← 11 skills
 ```
+
+Full documentation lives in the **[GitHub Wiki](https://github.com/saulpatinojr/Demo-Agentic_AI_with_Copilot/wiki)** — setup guides, test prompts with expected outcomes, and the extension guide.
 
 ## Where to go
 
-1. **Setup** — [wiki/01-Setup-Claude.md](wiki/01-Setup-Claude.md) or [wiki/02-Setup-Copilot.md](wiki/02-Setup-Copilot.md)
-2. **Test it** — [L1 simple](wiki/03-Test-Prompts-L1.md) → [L2 advanced](wiki/04-Test-Prompts-L2.md) → [L3 full-ecosystem](wiki/05-Test-Prompts-L3.md)
-3. **Extend it** — [wiki/06-Adding-Agents-and-Skills.md](wiki/06-Adding-Agents-and-Skills.md)
-
-> The `wiki/` folder is also written to be copy-pasted directly into this repo's GitHub Wiki (each file = one page).
+1. **Setup** — [Setup: Claude Code](https://github.com/saulpatinojr/Demo-Agentic_AI_with_Copilot/wiki/01-Setup-Claude) or [Setup: GitHub Copilot](https://github.com/saulpatinojr/Demo-Agentic_AI_with_Copilot/wiki/02-Setup-Copilot)
+2. **Test it** — [L1 simple](https://github.com/saulpatinojr/Demo-Agentic_AI_with_Copilot/wiki/03-Test-Prompts-L1) → [L2 advanced](https://github.com/saulpatinojr/Demo-Agentic_AI_with_Copilot/wiki/04-Test-Prompts-L2) → [L3 full-ecosystem](https://github.com/saulpatinojr/Demo-Agentic_AI_with_Copilot/wiki/05-Test-Prompts-L3)
+3. **Extend it** — [Adding Agents & Skills](https://github.com/saulpatinojr/Demo-Agentic_AI_with_Copilot/wiki/06-Adding-Agents-and-Skills)
 
 ## Quick start (60 seconds)
 
-1. Copy the contents of `claude/` (or `copilot/`) into any test folder.
-2. Open the folder in VS Code with Claude Code (or Copilot) — the Agents center should show 7 agents and 11 skills.
-3. Paste an L1 prompt from the wiki, e.g. *"Design a small Azure landing zone for a dev web app"* — and watch it route to Arc.
+Clone the repo, then copy the bundle **contents** (not the folder itself) into your test project:
+
+**Windows (PowerShell):**
+```powershell
+git clone https://github.com/saulpatinojr/Demo-Agentic_AI_with_Copilot.git
+Copy-Item -Recurse -Force Demo-Agentic_AI_with_Copilot\claude\* your-project\     # Claude Code
+# or
+Copy-Item -Recurse -Force Demo-Agentic_AI_with_Copilot\copilot\* your-project\   # GitHub Copilot
+```
+
+**macOS/Linux:**
+```bash
+git clone https://github.com/saulpatinojr/Demo-Agentic_AI_with_Copilot.git
+cp -r Demo-Agentic_AI_with_Copilot/claude/. your-project/     # Claude Code
+# or
+cp -r Demo-Agentic_AI_with_Copilot/copilot/. your-project/    # GitHub Copilot
+```
+
+Then:
+1. Open your project in VS Code with Claude Code (or Copilot) and start a **new** session — the Agents center should show 7 agents and 11 skills.
+2. Paste an L1 prompt from the [wiki](https://github.com/saulpatinojr/Demo-Agentic_AI_with_Copilot/wiki/03-Test-Prompts-L1), e.g. *"Design a small Azure landing zone for a dev web app"* — and watch it route to Arc.
+
+> Heads-up: `.claude`/`.github` are dot-folders — if you drag-and-drop in Explorer/Finder instead of using the commands above, make sure hidden files are visible so they actually get copied.
