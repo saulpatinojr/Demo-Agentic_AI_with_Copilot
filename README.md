@@ -1,6 +1,6 @@
 # Demo: Agentic AI with Claude & GitHub Copilot
 
-A drag-and-drop demo of a **multi-agent IaC engineering team** that runs identically on **Claude Code** and **GitHub Copilot** inside VS Code / the Agents center. Seven specialized agents, eleven skills, and an orchestrator layer with typed handoff contracts — designed so the flow routes correctly every time.
+A drag-and-drop demo of a **multi-agent IaC engineering team** that runs identically on **Claude Code** and **GitHub Copilot** inside VS Code / the Agents center. Seven specialized agents, twelve skills, and an orchestrator layer with typed handoff contracts — designed so the flow routes correctly every time.
 
 ## What this demo is trying to achieve
 
@@ -23,7 +23,7 @@ Prove that a single, well-structured set of agent definitions can:
 | architecture-reviewer | **Compass** | Read-only design/reuse review (2-pass cycle) |
 | plan-mode-reviewer | **Sentinel** | Read-only plan review & constraint gate |
 
-**Skills:** `handoff-contracts` (the glue), `terraform-validation`, `github-actions-security`, `azure-verified-modules`, `adr-authoring`, plus the Azure ops pack: `azure-cloud-migrate`, `azure-compliance`, `azure-cost`, `azure-deploy`, `azure-resource-visualizer`, and `report-issue` for filing bugs against this demo.
+**Skills:** `handoff-contracts` (the glue), `terraform-validation`, `github-actions-security`, `azure-verified-modules`, `adr-authoring`, plus the Azure ops pack: `azure-cloud-migrate`, `azure-compliance`, `azure-cost`, `azure-deploy`, `azure-resource-visualizer`, `report-issue` for filing bugs against this demo, and `drawio-skill` for professional draw.io architecture diagrams with the official Azure/AWS icon sets.
 
 ## Repository layout
 
@@ -32,12 +32,12 @@ Prove that a single, well-structured set of agent definitions can:
 │   ├── CLAUDE.md               ← orchestrator (auto-loaded by Claude Code)
 │   └── .claude/
 │       ├── agents/             ← 7 agents
-│       └── skills/             ← 11 skills
+│       └── skills/             ← 12 skills
 └── copilot/                    ← drag the CONTENTS into your project root for GitHub Copilot
     └── .github/
         ├── copilot-instructions.md   ← orchestrator (auto-loaded by Copilot)
         ├── agents/             ← 7 agents (.agent.md)
-        └── skills/             ← 11 skills
+        └── skills/             ← 12 skills
 ```
 
 Full documentation lives in the **[GitHub Wiki](https://github.com/saulpatinojr/Demo-Agentic_AI_with_Copilot/wiki)** — setup guides, test prompts with expected outcomes, and the extension guide.
@@ -69,7 +69,7 @@ cp -r Demo-Agentic_AI_with_Copilot/copilot/. your-project/    # GitHub Copilot
 ```
 
 Then:
-1. Open your project in VS Code with Claude Code (or Copilot) and start a **new** session — the Agents center should show 7 agents and 11 skills.
+1. Open your project in VS Code with Claude Code (or Copilot) and start a **new** session — the Agents center should show 7 agents and 12 skills.
 2. Paste an L1 prompt from the [wiki](https://github.com/saulpatinojr/Demo-Agentic_AI_with_Copilot/wiki/03-Test-Prompts-L1), e.g. *"Design a small Azure landing zone for a dev web app"* — and watch it route to Arc.
 
 > Heads-up: `.claude`/`.github` are dot-folders — if you drag-and-drop in Explorer/Finder instead of using the commands above, make sure hidden files are visible so they actually get copied.

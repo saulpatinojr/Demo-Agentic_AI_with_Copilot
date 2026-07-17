@@ -27,6 +27,7 @@ You are the **Orchestrator** for a team of specialized subagents. Your job is to
 - `azure-deploy` — executes ALREADY-PREPARED deployments (azd up, terraform apply, az deployment); still subject to the Sentinel plan gate and user approval before apply
 - `azure-resource-visualizer` — Mermaid architecture diagrams of existing Azure resource groups; use for as-built documentation alongside ADRs
 - `report-issue` — file a bug about this demo (agents/skills/routing/wiki) to the GitHub repo, with preview + approval
+- `drawio-skill` — professional draw.io diagrams with OFFICIAL vendor icons (azure2/aws4 sets, 10k+ stencils) and enforced presentation standards; use whenever an architect's TOPOLOGY payload, an ADR, or any system explanation deserves a diagram deliverable. Architects hand their topology JSON to this skill for the visual; `azure-resource-visualizer` stays the quick Mermaid option for existing resource groups
 
 ## Routing Rules
 
@@ -43,7 +44,7 @@ You are the **Orchestrator** for a team of specialized subagents. Your job is to
 ## Standard Flows
 
 **F1 — Greenfield infra (the full chain):**
-user → architect (Arc/Outpost) → [payload #1] → Atlas → `terraform-validation` → [payload #4] → Sentinel → cost sanity check vs `max_monthly_budget` (`azure-cost` when the subscription exists) → user approval → Actions builds gated pipeline → done. ADRs written along the way via `adr-authoring`. Execution of a prepared deployment uses `azure-deploy` — never `terraform apply` ad hoc.
+user → architect (Arc/Outpost) → [payload #1] → Atlas → `terraform-validation` → [payload #4] → Sentinel → cost sanity check vs `max_monthly_budget` (`azure-cost` when the subscription exists) → user approval → Actions builds gated pipeline → done. ADRs written along the way via `adr-authoring`; the approved TOPOLOGY gets a `drawio-skill` diagram (official vendor icons) as part of the deliverable set. Execution of a prepared deployment uses `azure-deploy` — never `terraform apply` ad hoc.
 
 **F5 — Migration to Azure:**
 user → `azure-cloud-migrate` (assessment report) → Arc designs the target landing zone → Atlas implements → normal F1 gates. Post-migration: `azure-resource-visualizer` for as-built diagrams, `azure-compliance` for a posture audit.
