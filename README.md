@@ -1,6 +1,6 @@
 # Demo: Agentic AI with Claude & GitHub Copilot
 
-A drag-and-drop demo of a **multi-agent IaC engineering team** that runs identically on **Claude Code** and **GitHub Copilot** inside VS Code / the Agents center. Seven specialized agents, five skills, and an orchestrator layer with typed handoff contracts — designed so the flow routes correctly every time.
+A drag-and-drop demo of a **multi-agent IaC engineering team** that runs identically on **Claude Code** and **GitHub Copilot** inside VS Code / the Agents center. Seven specialized agents, eleven skills, and an orchestrator layer with typed handoff contracts — designed so the flow routes correctly every time.
 
 ## What this demo is trying to achieve
 
@@ -23,7 +23,7 @@ Prove that a single, well-structured set of agent definitions can:
 | architecture-reviewer | **Compass** | Read-only design/reuse review (2-pass cycle) |
 | plan-mode-reviewer | **Sentinel** | Read-only plan review & constraint gate |
 
-**Skills:** `handoff-contracts` (the glue), `terraform-validation`, `github-actions-security`, `azure-verified-modules`, `adr-authoring`.
+**Skills:** `handoff-contracts` (the glue), `terraform-validation`, `github-actions-security`, `azure-verified-modules`, `adr-authoring`, plus the Azure ops pack: `azure-cloud-migrate`, `azure-compliance`, `azure-cost`, `azure-deploy`, `azure-resource-visualizer`, and `report-issue` for filing bugs against this demo.
 
 ## Repository layout
 
@@ -32,12 +32,12 @@ Prove that a single, well-structured set of agent definitions can:
 │   ├── CLAUDE.md               ← orchestrator (auto-loaded by Claude Code)
 │   └── .claude/
 │       ├── agents/             ← 7 agents
-│       └── skills/             ← 5 skills
+│       └── skills/             ← 11 skills
 ├── copilot/                    ← drag the CONTENTS into your project root for GitHub Copilot
 │   └── .github/
 │       ├── copilot-instructions.md   ← orchestrator (auto-loaded by Copilot)
 │       ├── agents/             ← 7 agents (.agent.md)
-│       └── skills/             ← 5 skills
+│       └── skills/             ← 11 skills
 └── wiki/                       ← full setup guide + L1/L2/L3 test prompts & expected outcomes
 ```
 
@@ -52,5 +52,5 @@ Prove that a single, well-structured set of agent definitions can:
 ## Quick start (60 seconds)
 
 1. Copy the contents of `claude/` (or `copilot/`) into any test folder.
-2. Open the folder in VS Code with Claude Code (or Copilot) — the Agents center should show 7 agents and 5 skills.
+2. Open the folder in VS Code with Claude Code (or Copilot) — the Agents center should show 7 agents and 11 skills.
 3. Paste an L1 prompt from the wiki, e.g. *"Design a small Azure landing zone for a dev web app"* — and watch it route to Arc.

@@ -3,7 +3,6 @@ description: 'Expert-level software engineering agent. Deliver production-ready,
 name: 'Software Engineer Agent'
 tools: ['agent', 'view', 'create', 'edit', 'grep', 'glob', 'show_file', 'bash', 'write_bash', 'read_bash', 'stop_bash', 'list_bash', 'task', 'read_agent', 'write_agent', 'list_agents', 'sql', 'report_intent', 'ask_user', 'skill', 'web_fetch', 'web_search', 'fetch_copilot_cli_documentation', 'github-mcp-server-*', 'extensions_manage', 'extensions_reload', 'search', 'search/changes', 'search/codebase', 'search/searchResults', 'search/usages', 'edit/editFiles', 'findTestFiles', 'execute/runInTerminal', 'execute/getTerminalOutput', 'execute/createAndRunTask', 'execute/runTests', 'execute/testFailure', 'read/terminalLastCommand', 'read/terminalSelection', 'read/problems', 'web/fetch', 'web/githubRepo']
 agents: ['architecture-reviewer']
-model: Claude Sonnet 4.6 (copilot)
 handoffs:
   - label: Review architecture & design
     agent: architecture-reviewer

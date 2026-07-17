@@ -75,7 +75,7 @@ L3 tests run the **entire chain** in one request. Expect long sessions. Pass = e
 ## Full-coverage checklist (run L3.1–L3.4)
 
 - [ ] All 7 agents activated at least once, in correct order
-- [ ] All 5 skills loaded where relevant
+- [ ] All 11 skills available; every skill relevant to the scenario loaded
 - [ ] All 5 handoff payload types used (#1 design, #2/#3 review, #4 plan, #5 escalation)
 - [ ] Reviewers never wrote a file
 - [ ] Review cycle never exceeded 2 passes

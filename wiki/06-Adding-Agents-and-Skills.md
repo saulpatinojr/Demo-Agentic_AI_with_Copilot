@@ -31,7 +31,7 @@ folder for anything longer.>
 4. If an agent should always use it, name the skill in that agent's instructions (as terraform-engineer names `terraform-validation`).
 5. Add one L1 trigger-test prompt to the wiki.
 
-**Skill ideas queued for this demo:** `finops-cost-estimation` (Infracost), `terraform-state-surgery`, `aws-well-architected-review`, `mermaid-topology-diagrams`.
+**Skill ideas queued for this demo:** `terraform-state-surgery`, `aws-well-architected-review`, `aws-cost` (the AWS counterpart of `azure-cost`). Already shipped from the original queue: cost management (`azure-cost`), diagrams (`azure-resource-visualizer`).
 
 ## Adding an agent
 

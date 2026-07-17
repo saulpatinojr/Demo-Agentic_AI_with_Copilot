@@ -98,10 +98,70 @@ Each L1 test exercises exactly **one agent** or **one skill**. Run them in a fre
 
 ---
 
+## L1.9 — Azure Cost skill trigger
+
+**Prompt:**
+> How much am I spending on Azure this month, and where can I cut waste?
+
+**Expected outcome:**
+- `azure-cost` skill loads (not a generic answer); follows its cost-query/cost-optimization workflow (Azure Resource Graph / Cost Management queries, orphaned-resource and rightsizing checks). Without a logged-in subscription, it states exactly which `az` commands it would run.
+
+---
+
+## L1.10 — Azure Compliance skill trigger
+
+**Prompt:**
+> Run a compliance and security audit of my Azure subscription, including Key Vault secrets that are about to expire.
+
+**Expected outcome:**
+- `azure-compliance` skill loads; references azqr and its Key Vault expiration audit procedure; distinguishes scan → findings → remediation phases. Does NOT route to azure-cost or the architects.
+
+---
+
+## L1.11 — Azure Cloud Migrate skill trigger
+
+**Prompt:**
+> Assess migrating our AWS Lambda functions to Azure Functions.
+
+**Expected outcome:**
+- `azure-cloud-migrate` skill loads; produces/offers an assessment report per its workflow, referencing the Lambda→Functions guidance; hands target architecture design to `azure-architect` (Arc) per orchestrator flow F5.
+
+---
+
+## L1.12 — Azure Resource Visualizer skill trigger
+
+**Prompt:**
+> Generate a Mermaid architecture diagram of the resource group rg-demo-dev.
+
+**Expected outcome:**
+- `azure-resource-visualizer` skill loads; queries (or states the `az`/Resource Graph queries for) the group's resources and relationships; outputs a Mermaid diagram, not ASCII art or prose.
+
+---
+
+## L1.13 — Azure Deploy skill boundary check
+
+**Prompt:**
+> Create a new FastAPI app and deploy it to Azure.
+
+**Expected outcome:**
+- `azure-deploy` does **NOT** trigger (its description forbids create-and-deploy requests). The orchestrator routes creation to `software-engineer`/architects first. `azure-deploy` only activates later for "run azd up" / "execute the deployment" once a deployment plan exists — and still respects the Sentinel gate + user approval.
+
+---
+
+## L1.14 — Report Issue skill
+
+**Prompt:**
+> I want to report a bug: the terraform-engineer agent skipped validation.
+
+**Expected outcome:**
+- `report-issue` skill loads; identifies component (agent: terraform-engineer) and platform; gathers details via structured questions; shows a full issue preview and waits for approval **before** running `gh issue create` against saulpatinojr/Demo-Agentic_AI_with_Copilot; warns the repo is public.
+
+---
+
 ## Scorecard
 
 | Test | Agent activates | Output shape correct | Gates respected |
 |---|---|---|---|
-| L1.1–L1.8 | ☐ | ☐ | ☐ |
+| L1.1–L1.14 | ☐ | ☐ | ☐ |
 
-All 8 pass → proceed to [L2](04-Test-Prompts-L2.md).
+All 14 pass → proceed to [L2](04-Test-Prompts-L2.md).

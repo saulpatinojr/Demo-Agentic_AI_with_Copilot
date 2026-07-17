@@ -23,7 +23,7 @@ your-project/
     │   ├── software-engineer.agent.md
     │   ├── architecture-reviewer.agent.md
     │   └── plan-mode-reviewer.agent.md
-    └── skills/                    ← 5 skills (one folder per skill, SKILL.md inside)
+    └── skills/                    ← 11 skills (one folder per skill, SKILL.md inside; larger skills bundle reference folders)
 ```
 
 3. Reload VS Code (or start a new Copilot session).
@@ -38,7 +38,7 @@ Smoke test:
 
 > "@workspace What custom agents and skills are configured in this repo?"
 
-Expected: names all 7 agents with codenames and the 5 skills.
+Expected: names all 7 agents with codenames and the 11 skills.
 
 ## How routing works
 

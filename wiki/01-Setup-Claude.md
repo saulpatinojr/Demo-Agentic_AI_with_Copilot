@@ -23,7 +23,7 @@ your-project/
     │   ├── software-engineer.md
     │   ├── architecture-reviewer.md
     │   └── plan-mode-reviewer.md
-    └── skills/               ← 5 skills (one folder per skill, SKILL.md inside)
+    └── skills/               ← 11 skills (one folder per skill, SKILL.md inside; larger skills bundle reference folders)
 ```
 
 > Windows tip: `.claude` is a dot-folder — make sure hidden files are visible in Explorer, or copy via terminal: `Copy-Item -Recurse claude\* your-project\`.
@@ -35,14 +35,14 @@ your-project/
 Open **Customizations** in the Claude panel (the same view as in the demo screenshots):
 
 - **Agents** → should list all 7 agents (Project scope, from `.claude/agents/`).
-- **Skills** → count should include the 5 project skills (`adr-authoring`, `azure-verified-modules`, `github-actions-security`, `handoff-contracts`, `terraform-validation`).
+- **Skills** → count should include the 11 project skills (`adr-authoring`, `azure-cloud-migrate`, `azure-compliance`, `azure-cost`, `azure-deploy`, `azure-resource-visualizer`, `azure-verified-modules`, `github-actions-security`, `handoff-contracts`, `report-issue`, `terraform-validation`).
 - **Instructions** → `CLAUDE.md` should show as the project instruction file.
 
 Quick smoke test — ask Claude:
 
 > "List the agents and skills available in this project and what each is for."
 
-Expected: it names all 7 agents with codenames (Arc, Outpost, Atlas, Actions, Forge, Compass, Sentinel) and all 5 skills.
+Expected: it names all 7 agents with codenames (Arc, Outpost, Atlas, Actions, Forge, Compass, Sentinel) and all 11 skills.
 
 ## How routing works
 
